@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 jt.flags.use_cuda = 1
 
 class DynamicNet(jt.nn.Module):
-    def __init__(self):
+    def __init__(self): 
         """
         模型初始化，定义5个参数位随机数
         """
