@@ -61,11 +61,11 @@ class DynamicNet(jt.nn.Module):
         """
         super().__init__()
         self.a = jt.randn(())
-        self.b = jt.randn(())
-        self.c = jt.randn(())
-        self.d = jt.randn(())
+        # self.b = jt.randn(())
+        # self.c = jt.randn(())
+        # self.d = jt.randn(())
         #TODO1：添加一个新的参数e
-        self.e = jt.randn(())
+        # self.e = jt.randn(())
 
     def execute(self, x):
         """
@@ -124,6 +124,7 @@ def main():
         # jittor的优化器可以直接传入loss，自动计算清空旧的梯度，反向传播得到新的梯度，更新参数
         optimizer.step(loss)
     print(f'Result: {model.string()}')
+    b = model.a.item()
 
 if __name__ == '__main__':
     main()
