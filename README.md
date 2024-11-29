@@ -15,7 +15,7 @@
 优化方案：利用高精度的PVT计算出a或者b，拟合a或者b对于“分子”的曲线
 
 ### 思路——by ZHJ & WJJ：
-> 引入物性参数$\theta$，改写方程如下：
+引入物性参数$\theta$，改写方程如下：
 
 $$p=\frac{\theta RT}{V-b}-\frac{a}{V(V+b)}$$其中$$a(T)=0.42748\frac{\theta^2R^2T_{c}^2}{p_c}\alpha(T),b(T)=0.08664\frac{\theta RT_c}{p_c}(\beta(T))=1$$初步将$\theta$训练为物性参数的函数，后续数据集充分的情况下训练：
 $$\frac{\theta_{T=T_c}}{Z_c/0.3333}=f(\mathrm{matter}),\frac{\theta}{\theta_{T=T_c}}=g(T,\mathrm{matter})$$
