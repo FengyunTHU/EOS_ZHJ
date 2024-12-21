@@ -238,10 +238,11 @@ def calculatePHI_LIQUID_NONESRK(p,V,T,Tc,pc,omega,theta,psat_list:list)->list:
 	psat = exp(lnpsat) # T下的饱和蒸汽压Pa
 
 	# 第一部分的积分：T,p0->T,psat，需要计算出在psat下的气体Vsat注意是气体积分
-	Vsatlist = getV(psat,T,Tc,pc,omega,theta) # 计算出在past下的体积->添加修正
+	# Vsatlist = getV(psat,T,Tc,pc,omega,theta) # 计算出在past下的体积->添加修正
 	Vsatlist_srk = getV(psat,T,Tc,pc,omega,1) # 用SRK方程计算
 	Vsat = max(Vsatlist_srk) # 气相体积
-	Vsatl = min(Vsatlist) # 液相体积
+	# Vsatl = min(Vsatlist) # 液相体积
+	Vsatl = V
 	lnPHIsat = calculatePHI_VAPOR_SRK(psat,Vsat,T,Tc,pc,omega) # 气相部分使用SRK
 
 	Zsat = psat*Vsat/(R*T)
